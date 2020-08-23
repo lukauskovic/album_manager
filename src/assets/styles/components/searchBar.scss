@@ -1,0 +1,39 @@
+.SearchBar{
+    padding-top: 2.5rem;
+
+    input {
+        box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+        border-radius: 4px;
+        height: 2.5rem;
+        width: 26.25rem;
+        appearance: none;
+        outline: none;
+        border: none;
+        background: url('../../images/search.svg') no-repeat;
+        background-position: right 1.25rem center;
+        padding-left: 1.43rem;
+        font-size: 0.875rem;
+        opacity: 0.8;
+    }
+
+    @include mq($until : desktop){
+        input{
+            height: 2.2rem;
+            width: 21rem;
+            padding-left: 1.2rem;
+        }
+    }
+
+    @include mq($until : tablet){
+        input{
+            width: 13rem;
+        }
+    }
+
+    @include mq($until : mobile){
+        padding-top: 0;
+        input{
+            width: 13rem;
+        }
+    }
+}

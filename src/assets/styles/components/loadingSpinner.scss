@@ -1,0 +1,6 @@
+.LoadingSpinner{
+    min-width: 100vw;
+    min-height: 100vh;
+    @include flexbox(center);
+    align-items: center;
+}

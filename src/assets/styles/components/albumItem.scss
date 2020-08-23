@@ -1,0 +1,159 @@
+.AlbumItem{
+    width: 100%;
+    max-width: 67.5rem;
+    height: 5.625rem;
+    margin-bottom: 0.625rem;
+    background: white;
+    padding: 0 1.27rem;
+    @include flexbox(space-between);
+    align-items: center;
+    box-shadow: 0 1px 3px 0 #e7e7e7;
+    @include fade-in;
+
+    &__Info{
+        display: flex;
+        width: 49%;
+
+        img{
+            width: 3.375rem;
+            height: 3.375rem;
+            margin-right: 1.625rem;
+        }
+
+        div{
+            @include flexbox(space-around);
+            flex-direction: column;
+            :nth-child(1){
+                font-size: 1.125rem;
+                font-weight: 500;
+                color: $blackish
+            }
+            :nth-child(2){
+                text-decoration: none;
+                p{
+                    font-size: 0.75rem;
+                    color: $fade-black;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        
+    }
+
+    &__Data{
+        width: 50%;
+        @include flexbox(space-between);
+        align-items: center;
+
+        &--Release{
+            display: flex;
+
+            :nth-child(1){
+                font-size: 0.875rem;
+                color: $fade-black;
+            }
+            :nth-child(2){
+                font-size: 0.875rem;
+                color: black;
+                margin-left: 0.5rem;
+            }
+        }
+
+        &--Price{
+            font-size: 0.875rem;
+        }
+
+        &--MarkFavorite{
+            
+            @include flexbox(center);
+            @include fade-in;
+            align-items: center;
+            color: white;
+            width: 7.813rem;
+            height: 1.563rem;
+            border-radius: 3px;
+            background-color: $aqua;
+            font-size: 0.625rem;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        &--RemoveFavorite{
+            @include fade-in;
+            @include flexbox(center);
+            align-items: center;
+            width: 7.813rem;    
+            height: 1.563rem;
+            color: $aqua;
+            font-size: 0.625rem;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+
+    @include mq($until : tablet){
+        height: unset;
+        margin-bottom: 0.625rem;
+        padding: .8rem 1.27rem;
+        flex-direction: column;
+
+        &__Info{
+            width: 90%;
+            margin-bottom: 1rem;            
+        }
+        &__Data{
+            width: 90%;
+        }
+    }
+
+    @include mq($until : mobile){
+        padding: .5rem;
+        flex-direction: column;
+
+        &__Info{
+            width: 100%;
+            margin-bottom: 1rem;  
+            
+            img{
+                width: 3.8rem;
+                height: 3.8rem;
+                margin-right: 1rem;
+            }
+            
+            div{
+                :nth-child(1){
+                    font-size: 1rem;
+                }
+            }
+        }
+        &__Data{
+            width: 100%;
+
+            &--Release{
+                display: flex;
+    
+                :nth-child(1){
+                    font-size: 0.7rem;
+                }
+                :nth-child(2){
+                    font-size: 0.7rem;
+                    margin-left: 0.3rem;
+                }
+            }
+    
+            &--Price{
+                font-size: 0.7rem;
+            }
+    
+            &--MarkFavorite{
+                width: 8rem;
+                height: 1.4rem;
+                font-size: 0.5rem;
+            }
+            &--RemoveFavorite{
+                width: 8rem;
+                height: 1.4rem;
+            }
+        }
+    }
+}

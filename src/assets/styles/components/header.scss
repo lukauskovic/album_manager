@@ -1,0 +1,33 @@
+.Header {
+    background: white;
+    height: 6.25rem;
+    padding: 0 50px;
+    @include flexbox(space-between);
+    margin-bottom: 3.25rem;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.18);
+
+    &__Title{
+        font-size: 1.5rem;
+        color: $blackish;
+        font-weight: 500;
+        padding-top: 2.313rem;
+    }
+
+    @include mq($until : desktop){
+        padding : 0 25px;
+        margin-bottom: 2.5rem;
+    }
+
+    @include mq($until : mobile){
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1.5rem;
+        
+        &__Title{
+            padding: 0;
+            margin-bottom: .6rem;
+        }
+    }
+
+}
